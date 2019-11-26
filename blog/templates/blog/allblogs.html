@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Home Page</title>
+    <title>Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -57,53 +57,51 @@
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Hi ! I'm Rahul.</h1>
-      <p class="lead text-muted"> Hey. I am learning Django with python and need your assistance in evaluating my progress.</p>
-      <p>
-        <a href="mailto:gajrah@gmail.com" class="btn btn-primary my-2">Email Me</a>
-      </p>
-    </div>
-  </section>
+      <h1>  Welcome to Rahul's Blog </h1>
+      <br/>
+      <h2> Latest Posts </h2>
+      <hr/>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
+    <div class="row mb-2">
+      {% for blog in blogs %}
 
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ job.image.url }}"  height="200"/>
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-              
-            </div>
+      <div class="col-md-10">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">World</strong>
+            <h3 class="mb-0"> {{blog.title}}  </h3>
+            <div class="mb-1 text-muted">Nov 12</div>
+            <p class="card-text mb-auto"> blog.body </p>
+            <a href="#" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="110%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
           </div>
         </div>
-        {% endfor %}
+      </div>
+      {% endfor %}
 
       </div>
-    </div>
-  </div>
 
-</main>
+
+    </div>  
 
 <footer class="text-muted">
-  <div class="container text-center">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-        © Rahul Reddy Gajjada {% now "Y" %}
-    <p>
-
-    </p>
-
-    </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-</html>
+    <div class="container text-center">
+      <p class="float-right">
+        <a href="">Back to top</a>
+      </p>
+          © Rahul Reddy Gajjada {% now "Y" %}
+      <p>
+  
+      </p>
+  
+      </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  </html>
+  
