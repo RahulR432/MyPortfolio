@@ -1,7 +1,11 @@
 
 from django.urls import path
-import blog.views
+from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
-    path('', blog.views.allblogs, name='allblogs'),
-]
+    path('', views.allblogs, name='allblogs'),
+    path('<int:blog_id>/', views.detail, name='detail'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

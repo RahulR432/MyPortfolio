@@ -36,20 +36,20 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Rahul Reddy Gajjada</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Rahul Reddy Gajjada</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item ">
                   <a class="nav-link" href="#">Twitter <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Resume</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
+                  <a class="nav-link active" href="#">Blog</a>
                 </li>
               </ul>
             </div>
@@ -71,13 +71,11 @@
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary">World</strong>
             <h3 class="mb-0"> {{blog.title}}  </h3>
-            <div class="mb-1 text-muted">Nov 12</div>
-            <p class="card-text mb-auto"> blog.body </p>
+            <div class="mb-1 text-muted">{{ blog.pretty_pub_date }}</div>
+            <p class="card-text mb-auto"> {{blog.summary }}</p>
             <a href="#" class="stretched-link">Continue reading</a>
           </div>
-          <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="110%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-          </div>
+              <img src="{{ blog.image.url }}" alt="Thumbnail" class="img-fluid" height="200" width="200">
         </div>
       </div>
       {% endfor %}
